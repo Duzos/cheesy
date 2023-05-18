@@ -2,13 +2,11 @@ package com.duzo.cheesy;
 
 import com.duzo.cheesy.common.CheeseGunItem;
 import com.duzo.cheesy.common.CheeseProjectile;
-import com.duzo.cheesy.rendering.CheesyProjectileRenderer;
 import com.mojang.logging.LogUtils;
-import net.minecraft.client.renderer.entity.ArrowRenderer;
-import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.client.renderer.entity.SpectralArrowRenderer;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -37,7 +35,9 @@ public class Cheesy {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Cheesy.MODID);
     public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MODID);
 
+    public static final RegistryObject<Item> CHEESE = ITEMS.register("cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(5f).build())));
     public static final RegistryObject<CheeseGunItem> CHEESE_GUN = ITEMS.register("cheese_gun", () -> new CheeseGunItem(new Item.Properties()));
+
     public static final RegistryObject<EntityType<CheeseProjectile>> CHEESE_PROJECTILE = ENTITY_TYPES.register("cheese_projectile",
             () -> EntityType.Builder.of((EntityType.EntityFactory<CheeseProjectile>) CheeseProjectile::new, MobCategory.MISC).sized(0.5F, 0.5F).build("cheese_projectile"));
 
@@ -74,7 +74,10 @@ public class Cheesy {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            EntityRenderers.register(CHEESE_PROJECTILE.get(), CheesyProjectileRenderer::new);
+        }
+        @SubscribeEvent
+        public static void registerRenderers(EntityRenderersEvent.RegisterRenderers renderers) {
+            renderers.registerEntityRenderer(CHEESE_PROJECTILE.get(), ThrownItemRenderer::new);
         }
     }
 }

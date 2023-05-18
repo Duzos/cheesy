@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#T#",
+        "#C#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "cheesy:cheese"
+        },
+        "T": {
+            "item": "minecraft:tnt"
+        },
+        "C": {
+            "item": "minecraft:crossbow"
+        }
+    },
+    "result": {
+        "item": "cheesy:cheese_gun",
+        "count": 1
+    }
+}

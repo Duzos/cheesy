@@ -5,12 +5,15 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
+import org.jetbrains.annotations.NotNull;
 
-public class CheeseProjectile extends AbstractArrow {
-    public CheeseProjectile(EntityType<? extends AbstractArrow> p_36721_, Level p_36722_) {
+public class CheeseProjectile extends ThrowableItemProjectile {
+    public CheeseProjectile(EntityType<? extends CheeseProjectile> p_36721_, Level p_36722_) {
         super(p_36721_, p_36722_);
     }
 
@@ -19,13 +22,13 @@ public class CheeseProjectile extends AbstractArrow {
     }
 
     @Override
-    protected ItemStack getPickupItem() {
-        return null;
-    }
-
-    @Override
     protected void onHit(HitResult result) {
         this.level.explode(this,result.getLocation().x,result.getLocation().y,result.getLocation().z,5f, Level.ExplosionInteraction.BLOCK);
         this.remove(RemovalReason.DISCARDED);
+    }
+
+    @Override
+    protected @NotNull Item getDefaultItem() {
+        return Cheesy.CHEESE.get();
     }
 }

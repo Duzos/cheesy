@@ -37,7 +37,7 @@ public class Cheesy {
     public static DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, MODID);
 
     public static final RegistryObject<Item> CHEESE = ITEMS.register("cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(5f).build())));
-    public static final RegistryObject<CheeseGunItem> CHEESE_GUN = ITEMS.register("cheese_gun", () -> new CheeseGunItem(new Item.Properties()));
+    public static final RegistryObject<CheeseGunItem> CHEESE_GUN = ITEMS.register("cheese_gun", () -> new CheeseGunItem(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<EntityType<CheeseProjectile>> CHEESE_PROJECTILE = ENTITY_TYPES.register("cheese_projectile",
             () -> EntityType.Builder.of((EntityType.EntityFactory<CheeseProjectile>) CheeseProjectile::new, MobCategory.MISC).sized(0.5F, 0.5F).build("cheese_projectile"));

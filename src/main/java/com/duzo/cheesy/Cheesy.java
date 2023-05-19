@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -58,7 +59,12 @@ public class Cheesy {
 
     private void addCreative(CreativeModeTabEvent.BuildContents event)
     {
-
+        if (event.getTab() == CreativeModeTabs.COMBAT) {
+            event.accept(CHEESE_GUN.get());
+        }
+        if (event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(CHEESE.get());
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

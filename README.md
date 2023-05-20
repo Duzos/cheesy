@@ -18,3 +18,8 @@
 - Made by surrounding a crossbow and tnt with cheese
 
 ### More will be added in future!
+
+## Links
+### [Curseforge](https://www.curseforge.com/minecraft/mc-mods/cheesy)
+### [Modrinth](https://modrinth.com/mod/cheesy)
+### [Support Discord](https://discord.gg/ZgssqpUMHS)

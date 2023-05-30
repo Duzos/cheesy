@@ -1,0 +1,11 @@
+{
+  "nuclear_siren": {
+    "subtitle": "Nuclear Siren",
+    "sounds": [
+      {
+        "name": "cheesy:nuclear_siren",
+        "stream": false
+      }
+    ]
+  }
+}

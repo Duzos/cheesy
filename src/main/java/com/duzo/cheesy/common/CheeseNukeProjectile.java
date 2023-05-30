@@ -12,6 +12,7 @@ import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.NotNull;
 
 public class CheeseNukeProjectile extends ThrowableItemProjectile {
+    private static final float EXPLOSION_STRENGTH = 125f;
     public CheeseNukeProjectile(EntityType<? extends CheeseNukeProjectile> p_36721_, Level p_36722_) {
         super(p_36721_, p_36722_);
     }
@@ -36,7 +37,17 @@ public class CheeseNukeProjectile extends ThrowableItemProjectile {
     @Override
     protected void onHit(HitResult result) {
         if (!this.level.isClientSide) {
-            this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z, 75f, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x - 10, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x - 20, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x + 10, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x + 20, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z - 10, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z - 20, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z + 10, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z + 20, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x, result.getLocation().y - 10, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x, result.getLocation().y - 20, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
             this.remove(RemovalReason.DISCARDED);
         }
     }

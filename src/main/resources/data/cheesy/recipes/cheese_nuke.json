@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#T#",
+    "TnT",
+    "#T#"
+  ],
+  "key": {
+    "#": {
+      "item": "cheesy:cheese"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    },
+    "n": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "cheesy:cheese_nuke",
+    "count": 1
+  }
+}

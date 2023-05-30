@@ -38,14 +38,24 @@ public class CheeseNukeProjectile extends ThrowableItemProjectile {
     protected void onHit(HitResult result) {
         if (!this.level.isClientSide) {
             this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+
+            // X direction
             this.level.explode(this, result.getLocation().x - 10, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
             this.level.explode(this, result.getLocation().x - 20, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x - 30, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
             this.level.explode(this, result.getLocation().x + 10, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
             this.level.explode(this, result.getLocation().x + 20, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x + 30, result.getLocation().y, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+
+            // Z
             this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z - 10, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
             this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z - 20, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z - 30, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
             this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z + 10, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
             this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z + 20, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+            this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z + 30, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
+
+            // Y
             this.level.explode(this, result.getLocation().x, result.getLocation().y - 10, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
             this.level.explode(this, result.getLocation().x, result.getLocation().y - 20, result.getLocation().z, EXPLOSION_STRENGTH, Level.ExplosionInteraction.BLOCK);
             this.remove(RemovalReason.DISCARDED);

@@ -1,13 +1,10 @@
-package com.duzo.cheesy.common;
+package com.duzo.cheesy.entity;
 
-import com.duzo.cheesy.Cheesy;
+import com.duzo.cheesy.item.ModItems;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.entity.projectile.Arrow;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +15,7 @@ public class CheeseProjectile extends ThrowableItemProjectile {
     }
 
     public CheeseProjectile(LivingEntity p_36718_, Level p_36719_) {
-        super(Cheesy.CHEESE_PROJECTILE.get(), p_36718_, p_36719_);
+        super(ModEntities.CHEESE_PROJECTILE.get(), p_36718_, p_36719_);
     }
 
     @Override
@@ -31,6 +28,6 @@ public class CheeseProjectile extends ThrowableItemProjectile {
 
     @Override
     protected @NotNull Item getDefaultItem() {
-        return Cheesy.CHEESE.get();
+        return ModItems.CHEESE.get();
     }
 }

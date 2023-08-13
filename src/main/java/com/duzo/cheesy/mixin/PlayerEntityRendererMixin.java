@@ -1,6 +1,6 @@
 package com.duzo.cheesy.mixin;
 
-import com.duzo.cheesy.common.CheeseGunItem;
+import com.duzo.cheesy.item.CheeseGunItem;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.player.AbstractClientPlayer;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;

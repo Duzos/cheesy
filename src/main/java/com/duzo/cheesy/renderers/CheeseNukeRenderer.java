@@ -1,19 +1,15 @@
 package com.duzo.cheesy.renderers;
 
 import com.duzo.cheesy.Cheesy;
-import com.duzo.cheesy.common.CheeseNukeProjectile;
+import com.duzo.cheesy.entity.CheeseNukeProjectile;
 import com.duzo.cheesy.models.CheeseNukeModel;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.gui.screens.Overlay;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
-import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import org.jetbrains.annotations.NotNull;
 
 public class CheeseNukeRenderer<T extends CheeseNukeProjectile> extends EntityRenderer<T> {

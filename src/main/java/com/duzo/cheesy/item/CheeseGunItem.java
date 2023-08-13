@@ -1,11 +1,11 @@
-package com.duzo.cheesy.common;
+package com.duzo.cheesy.item;
 
 import com.duzo.cheesy.Cheesy;
+import com.duzo.cheesy.entity.CheeseProjectile;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.CrossbowItem;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -38,7 +38,7 @@ public class CheeseGunItem extends CrossbowItem {
     private ItemStack getCheeseInInventory(Player player) {
         for(int i = 0; i < player.getInventory().getContainerSize(); ++i) {
             ItemStack stack = player.getInventory().getItem(i);
-            if (stack.is(Cheesy.CHEESE.get())) {
+            if (stack.is(ModItems.CHEESE.get())) {
                 return stack;
             }
         }

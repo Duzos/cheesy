@@ -1,7 +1,7 @@
-package com.duzo.cheesy.common;
+package com.duzo.cheesy.entity;
 
-import com.duzo.cheesy.Cheesy;
-import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import com.duzo.cheesy.item.ModItems;
+import com.duzo.cheesy.sounds.ModSounds;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,18 +17,18 @@ public class CheeseNukeProjectile extends ThrowableItemProjectile {
         super(p_36721_, p_36722_);
     }
     public CheeseNukeProjectile(Level p_36722_) {
-        super(Cheesy.CHEESE_NUKE_PROJECTILE.get(), p_36722_);
+        super(ModEntities.CHEESE_NUKE_PROJECTILE.get(), p_36722_);
     }
 
     public CheeseNukeProjectile(LivingEntity p_36718_, Level p_36719_) {
-        super(Cheesy.CHEESE_NUKE_PROJECTILE.get(), p_36718_, p_36719_);
+        super(ModEntities.CHEESE_NUKE_PROJECTILE.get(), p_36718_, p_36719_);
     }
 
     @Override
     public void onAddedToWorld() {
 
         if (!this.level().isClientSide) {
-            this.level().playSound(null,this,Cheesy.NUCLEAR_SIREN.get(), SoundSource.PLAYERS,1f,1f);
+            this.level().playSound(null,this, ModSounds.NUCLEAR_SIREN.get(), SoundSource.PLAYERS,1f,1f);
         }
 
         super.onAddedToWorld();
@@ -64,6 +64,6 @@ public class CheeseNukeProjectile extends ThrowableItemProjectile {
 
     @Override
     protected @NotNull Item getDefaultItem() {
-        return Cheesy.CHEESE.get();
+        return ModItems.CHEESE.get();
     }
 }

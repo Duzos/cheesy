@@ -1,0 +1,10 @@
+{
+  "block.cheesy.cheese_block": "Cheese Block",
+  "entity.cheesy.cheese_nuke_projectile": "Cheese Nuke Projectile",
+  "entity.cheesy.cheese_projectile": "Cheese Projectile",
+  "item.cheesy.cheese": "Cheese",
+  "item.cheesy.cheese_gun": "Cheese Gun",
+  "item.cheesy.cheese_nuke": "Cheese Nuke",
+  "itemGroup.cheese_tab": "Cheesy",
+  "subtitle.cheesy.nuclear_siren": "Nuclear Siren"
+}

@@ -1,6 +1,7 @@
-package com.duzo.cheesy.common;
+package com.duzo.cheesy.item;
 
-import com.duzo.cheesy.Cheesy;
+import com.duzo.cheesy.entity.CheeseNukeProjectile;
+import com.duzo.cheesy.sounds.ModSounds;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -22,7 +23,7 @@ public class CheeseNukeItem extends Item {
         Player player = context.getPlayer();
         ItemStack stack = context.getItemInHand();
 
-        level.playSound(null,player.getX(),player.getY(),player.getZ(), Cheesy.NUCLEAR_SIREN.get(), SoundSource.PLAYERS,1f,1f);
+        level.playSound(null,player.getX(),player.getY(),player.getZ(), ModSounds.NUCLEAR_SIREN.get(), SoundSource.PLAYERS,1f,1f);
 
         if (!level.isClientSide) {
             CheeseNukeProjectile nuke = new CheeseNukeProjectile(level);

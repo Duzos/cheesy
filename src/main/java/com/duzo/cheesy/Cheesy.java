@@ -1,9 +1,6 @@
 package com.duzo.cheesy;
 
-import com.duzo.cheesy.common.CheeseGunItem;
-import com.duzo.cheesy.common.CheeseNukeItem;
-import com.duzo.cheesy.common.CheeseNukeProjectile;
-import com.duzo.cheesy.common.CheeseProjectile;
+import com.duzo.cheesy.common.*;
 import com.duzo.cheesy.models.CheeseNukeModel;
 import com.duzo.cheesy.renderers.CheeseNukeRenderer;
 import com.mojang.logging.LogUtils;
@@ -18,14 +15,12 @@ import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
-import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -63,23 +58,13 @@ public class Cheesy {
         ITEMS.register(modEventBus);
         ENTITY_TYPES.register(modEventBus);
         SOUNDS.register(modEventBus);
+        CheeseTabs.TABS.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
-        modEventBus.addListener(this::addCreative);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
 
-    }
-
-    private void addCreative(CreativeModeTabEvent.BuildContents event)
-    {
-        if (event.getTab() == CreativeModeTabs.COMBAT) {
-            event.accept(CHEESE_GUN.get());
-        }
-        if (event.getTab() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(CHEESE.get());
-        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

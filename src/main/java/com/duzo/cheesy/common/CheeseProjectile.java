@@ -23,8 +23,8 @@ public class CheeseProjectile extends ThrowableItemProjectile {
 
     @Override
     protected void onHit(HitResult result) {
-        if (!this.level.isClientSide) {
-            this.level.explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z, 50f, Level.ExplosionInteraction.BLOCK);
+        if (!this.level().isClientSide) {
+            this.level().explode(this, result.getLocation().x, result.getLocation().y, result.getLocation().z, 50f, Level.ExplosionInteraction.BLOCK);
             this.remove(RemovalReason.DISCARDED);
         }
     }

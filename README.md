@@ -1,5 +1,5 @@
 # Cheesy
-## Cheesy is a 1.19.4 Forge Minecraft Mod
+## Cheesy is a 1.19-1.20 Forge Minecraft Mod
 
 ## What does this mod add?
 ### Cheese

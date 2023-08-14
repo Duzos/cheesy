@@ -7,6 +7,7 @@ import com.duzo.cheesy.item.ModItems;
 import com.duzo.cheesy.models.CheeseNukeModel;
 import com.duzo.cheesy.renderers.CheeseNukeRenderer;
 import com.duzo.cheesy.sounds.ModSounds;
+import com.duzo.cheesy.util.ModPois;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
@@ -38,6 +39,7 @@ public class Cheesy {
         ModSounds.SOUNDS.register(modEventBus);
         ModTabs.TABS.register(modEventBus);
         ModBlocks.BLOCKS.register(modEventBus);
+        ModPois.POI.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
     }

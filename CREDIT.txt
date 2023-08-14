@@ -1,0 +1,2 @@
+ModTeleporter, CheeseItem, CheesePortalBlock largely from https://github.com/quek04/The-Undergarden
+Under MIT-License: https://github.com/quek04/The-Undergarden/blob/1.18/LICENSE

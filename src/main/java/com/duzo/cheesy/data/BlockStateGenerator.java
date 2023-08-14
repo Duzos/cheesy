@@ -1,6 +1,7 @@
 package com.duzo.cheesy.data;
 import com.duzo.cheesy.Cheesy;
 import com.duzo.cheesy.block.ModBlocks;
+import com.duzo.cheesy.block.custom.CheesePortalBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
@@ -18,6 +19,8 @@ public class BlockStateGenerator extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         for (RegistryObject<Block> entry : ModBlocks.BLOCKS.getEntries()) {
+            if (entry.get() instanceof CheesePortalBlock) continue;
+
             // @TODO this better
             if (entry.get() instanceof StairBlock) {
                 stairsBlock((StairBlock) entry.get(), new ResourceLocation(Cheesy.MODID,"textures/block/" + entry.get().getDescriptionId() + ".png"));

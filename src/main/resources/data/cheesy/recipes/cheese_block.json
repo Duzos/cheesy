@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "cheesy:cheese"
+    }
+  },
+  "result": {
+    "item": "cheesy:cheese_block",
+    "count": 1
+  }
+}

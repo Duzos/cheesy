@@ -1,6 +1,8 @@
 package com.duzo.cheesy.data;
 
 import com.duzo.cheesy.Cheesy;
+import com.duzo.cheesy.block.ModBlocks;
+import com.duzo.cheesy.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.BlockTagsProvider;
@@ -17,6 +19,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-
+        tag(ModTags.Blocks.PORTAL_FRAME_BLOCKS).add(ModBlocks.CHEESE_BLOCK.get());
     }
 }

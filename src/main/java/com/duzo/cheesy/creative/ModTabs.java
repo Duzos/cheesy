@@ -2,6 +2,7 @@ package com.duzo.cheesy.creative;
 
 import com.duzo.cheesy.Cheesy;
 import com.duzo.cheesy.block.ModBlocks;
+import com.duzo.cheesy.block.custom.CheesePortalBlock;
 import com.duzo.cheesy.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -22,6 +23,8 @@ public class ModTabs {
                     output.accept(reg.get());
                 }
                 for (RegistryObject<Block> reg : ModBlocks.BLOCKS.getEntries()) {
+                    if (reg.get() instanceof CheesePortalBlock) continue;
+
                     output.accept(reg.get());
                 }
             })

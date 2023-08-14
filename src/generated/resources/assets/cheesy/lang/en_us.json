@@ -1,5 +1,7 @@
 {
   "block.cheesy.cheese_block": "Cheese Block",
+  "block.cheesy.cheese_portal_block": "Cheese Portal Block",
+  "block.cheesy.mouldy_cheese_block": "Mouldy Cheese Block",
   "entity.cheesy.cheese_nuke_projectile": "Cheese Nuke Projectile",
   "entity.cheesy.cheese_projectile": "Cheese Projectile",
   "item.cheesy.cheese": "Cheese",

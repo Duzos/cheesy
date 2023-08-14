@@ -1,0 +1,11 @@
+{
+  "type": "cheesy:cheesy",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "cheesy:cheese",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "cheesy:cheese"
+    }
+  }
+}

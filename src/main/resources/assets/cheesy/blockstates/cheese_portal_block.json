@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "axis=z": {
+      "model": "cheesy:block/cheese_portal_block",
+      "y": 90
+    },
+    "axis=x": {
+      "model": "cheesy:block/cheese_portal_block"
+    }
+  }
+}

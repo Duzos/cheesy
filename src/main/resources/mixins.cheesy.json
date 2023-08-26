@@ -2,11 +2,11 @@
   "required": true,
   "minVersion": "0.8",
   "package": "com.duzo.cheesy.mixin",
-  "refmap": "cheesy.refmap.json",
-  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.cheesy.refmap.json",
+  "compatibilityLevel": "JAVA_16",
   "mixins": [],
   "client": [
-    "PlayerEntityRendererMixin"
+//    "PlayerEntityRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
